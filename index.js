@@ -23,10 +23,10 @@ client.on('message', msg =>{
     if (!msg.content.startsWith(PREFIX)){
         return;
     }
-    
+
     // Track how many arguments are in the message
     let args = msg.content.slice(1).split(" ");
-    
+
     // Look at the first argument, that is the command
     switch (args[0]) {
 
@@ -59,7 +59,6 @@ client.on('message', msg =>{
                         let fResponse = new MessageEmbed();
                         fResponse.setTitle(`${modWord}`);
                         fResponse.setColor('RANDOM');
-                        fResponse.setThumbnail('https://www.mobafire.com/images/champion/skins/landscape/ahri-kda.jpg');
                         fResponse.setDescription(`${modWord} is not a word. Did you mean one of these?`);
                         // For each word suggestion, present it in the message
                         response.forEach(element => {
@@ -107,7 +106,7 @@ client.on('message', msg =>{
             }*/
             players.push(new Person(msg.author.username));
             break;
-        
+
         case 'gready':
             players[msg.author.username] = !players[msg.author.username];
             if (players[msg.author.username]){
@@ -121,7 +120,7 @@ client.on('message', msg =>{
         case 'gstart':
             console.log(players);
             break;
-        
+
         default:
             msg.reply(`"${msg.content}" is not a valid command`);
             break;
